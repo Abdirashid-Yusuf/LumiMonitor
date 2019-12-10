@@ -116,7 +116,7 @@ public class AddToDatabase extends AppCompatActivity {
         lightLevel = findViewById(R.id.lightLevel);
         micIn = findViewById(R.id.micIn);
         micOut = findViewById(R.id.micOut);
-       // rgb = findViewById(R.id.rgb);
+        rgb = findViewById(R.id.rgb);
         back = findViewById(R.id.button7);
 
     }
