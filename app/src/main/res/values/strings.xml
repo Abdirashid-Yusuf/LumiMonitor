@@ -57,5 +57,6 @@
     <string name="save">Button</string>
     <string name="Backgroundcolorvalues" />
     <string name="title" />
+    <string name="Save">Save Preference</string>
 
 </resources>

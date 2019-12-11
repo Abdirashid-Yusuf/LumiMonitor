@@ -2,27 +2,38 @@ package com.n01249089.lumimonitor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 public class colorpicker extends AppCompatActivity {
+private Button save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setupTitleandHomeButton();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colorpicker);
+//        save = findViewById(R.id.save);
+//        save.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.v("Switch State=", "Preference saved");
+//            }
+//        });
 
         final Bitmap[] map = new Bitmap[1]; //represent the color wheel on a circular grid composed of individual dots corresponding to our pixels
 
@@ -65,6 +76,7 @@ public class colorpicker extends AppCompatActivity {
 
             });
         }
+
     private void setupTitleandHomeButton() {
         getSupportActionBar().setSubtitle("Lighting Options");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -79,5 +91,7 @@ public class colorpicker extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    }
+
+}
+
 

@@ -11,7 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -41,6 +43,8 @@ public class microphone extends AppCompatActivity {
     private TextView micIn;
     private TextView micOut;
     private TextView timestamp;
+    Switch onOffSwitch;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +55,23 @@ public class microphone extends AppCompatActivity {
         getDatabase();
         findAllViews();
         reterieveData();
-    }
+        onOffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.v("Switch State=", ""+isChecked);
+                Intent intent = new Intent(microphone.this, bluetooth.class);
+                startActivity(intent);
+            }
+
+        });
+    }
 
     private void findAllViews() {
         micIn = findViewById(R.id.textView2);
         micOut = findViewById(R.id.textView3);
         timestamp = findViewById(R.id.timestamp);
+        onOffSwitch =  findViewById(R.id.switch2);
     }
     private void getDatabase() {
         // TODO: Find the reference form the database.
@@ -151,6 +165,7 @@ public class microphone extends AppCompatActivity {
             }
         });
     }
+
     private void setupTitleandHomeButton() {
         getSupportActionBar().setSubtitle("Firebase temp");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -165,4 +180,5 @@ public class microphone extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }

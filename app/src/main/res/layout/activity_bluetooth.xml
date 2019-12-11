@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bluetooth">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/btONOFF"
+        android:text="ON/OFF"
+        >
+
+    </Button>
+    <Button
+        android:text="Enable Discoverable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDiscoverable_on_off"
+        android:onClick="btnEnableDisable_Discoverable"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/btnFindUnpairedDevices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:onClick="btnDiscover"
+        android:text="Discover"
+        tools:ignore="OnClick" />
+
+    <ListView
+        android:id="@+id/lvNewDevices"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/btnFindUnpairedDevices"
+        android:layout_alignParentBottom="true"
+        />
+
+
+</RelativeLayout>
